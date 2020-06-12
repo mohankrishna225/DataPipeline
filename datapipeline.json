@@ -1,0 +1,31 @@
+{
+  "objects": [
+    {
+      "name": "DefaultResource1",
+      "id": "ResourceId_27dLM",
+      "amiVersion": "3.9.0",
+      "type": "EmrCluster",
+      "region": "us-east-1"
+    },
+    {
+      "failureAndRerunMode": "CASCADE",
+      "resourceRole": "DataPipelineDefaultResourceRole",
+      "role": "DataPipelineDefaultRole",
+      "pipelineLogUri": "s3://project/bin/scripts/logs/",
+      "scheduleType": "ONDEMAND",
+      "name": "Default",
+      "id": "Default"
+    },
+    {
+      "stage": "true",
+      "scriptUri": "s3://project/bin/scripts/RunPython.sh",
+      "name": "DefaultShellCommandActivity1",
+      "id": "ShellCommandActivityId_hA57k",
+      "runsOn": {
+        "ref": "ResourceId_27dLM"
+      },
+      "type": "ShellCommandActivity"
+    }
+  ],
+  "parameters": []
+}

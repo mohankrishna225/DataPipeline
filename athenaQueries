@@ -1,0 +1,55 @@
+ SELECT
+ useridentity.username,
+ eventname,
+ eventtime,
+ json_extract(requestparameters,'$.key') AS "key";
+ json_extract(requestparameters,'$.bucketName') AS "Bucket's Name";
+FROM cloudtrail_logs_storinglongs01 WHERE eventname like 'HeadObject'
+
+-----------------------------------------------------------------------------------
+ SELECT
+ useridentity.username,
+ eventname,
+ eventtime
+FROM cloudtrail_logs_storinglongs01 WHERE eventname like 'GetObject'
+-----------------------------------------------------------------------------------
+
+ SELECT
+ useridentity.username,
+ eventname,
+ eventtime
+FROM cloudtrail_logs_storinglongs01 WHERE eventname like 'PutObject'
+
+----------------------------------------------------------------------------------
+
+
+eventversion        | 1.04
+useridentity        | {type=IAMUser, principalid=LKUWHE3545KJ34534L65U, 
+                      arn=arn:aws:iam::999999999999:user/iam-username, 
+                      accountid=999999999999, invokedby=null, 
+                      accesskeyid=FAKEACCESSID, username=iam-username, 
+                      sessioncontext=null}
+eventtime           | 2018-04-04T23:55:30Z
+eventsource         | monitoring.amazonaws.com
+eventname           | DescribeAlarms
+awsregion           | us-east-1
+sourceipaddress     | 198.51.100.144
+useragent           | aws-cli/1.11.132
+errorcode           | NULL
+errormessage        | NULL
+requestparameters   | {"alarmNames":["alarmname"]}
+responseelements    | null
+additionaleventdata | NULL
+requestid           | 09a5f980-13a2-48af-94d7-f27a2affbdbe
+eventid             | 55979b8b-494f-4c8f-9cf9-3edaadefe142
+resources           | NULL
+eventtype           | AwsApiCall
+apiversion          | NULL
+readonly            | NULL
+recipientaccountid  | 999999999999
+serviceeventdetails | NULL
+sharedeventid       | NULL
+vpcendpointid       | NULL
+region              | us-east-1
+year                | 2018
+month               | 04

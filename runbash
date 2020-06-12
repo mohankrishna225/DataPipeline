@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo -i
+sudo aws s3 cp s3://sourcecode03/folder1/ /code  --recursive
+sudo yum install python3 -y
+sudo yum install python3-pip -y
+sudo pip3 install boto3
+sudo pip3 install xlrd
+cd /code
+echo | python3 /code/Copy_ReadExcell1.0.py
